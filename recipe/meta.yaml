@@ -1,5 +1,5 @@
 {% set name = "synthetic-data" %}
-{% set version = "1.1.0" %}
+{% set version = "1.2.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,14 +7,14 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/synthetic-data-{{ version }}.tar.gz
-  sha256: 02876690e9a30f877b9eaa884f25ad6a5ff0b9fc701502e778452e0b973642dd
+  sha256: 7cf783aa40c11110edd11a6d76256ea368d20ceda8f7633707b5f69f6a5a8764
 
 build:
   noarch: python
   script_env:
-   - PYTHONUTF8=1
+    - PYTHONUTF8=1
   script: {{ PYTHON }} -m pip install . -vv
-  number: 1
+  number: 0
 
 requirements:
   host:
