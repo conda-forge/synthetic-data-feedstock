@@ -1,11 +1,11 @@
-About synthetic-data
-====================
+About synthetic-data-feedstock
+==============================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/synthetic-data-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/capitalone/synthetic-data
 
 Package license: Apache-2.0
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/synthetic-data-feedstock/blob/main/LICENSE.txt)
 
 Summary: Generates complex, nonlinear datasets for use with deep learning/black box models
 
