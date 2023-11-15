@@ -1,5 +1,5 @@
 {% set name = "synthetic-data" %}
-{% set version = "1.2.2" %}
+{% set version = "1.2.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/synthetic-data-{{ version }}.tar.gz
-  sha256: f7ba7fa65821ba9e69c7a309c912c0431e5724f97cace4196af446dfbd44a60e
+  sha256: eeef55fe2fb2f3d3a1e71861817ebad5cbb2b9df8cb915fc98fbddbbd70b92ae
 
 build:
   noarch: python
@@ -22,14 +22,18 @@ requirements:
     - pip
   run:
     - python >=3.8
-    - numpy >=1.21.0
-    - scikit-learn >=1.1.2
-    - scipy >=1.7.0
-    - dataprofiler >=0.8.8
+    - numpy >=1.22.0
+    - scikit-learn >=1.1.0
+    - scipy >=1.10.0
+    - dataprofiler >=0.10.3
 
 test:
   imports:
     - synthetic_data
+  commands:
+    - pip check
+  requires:
+    - pip
 
 about:
   home: https://github.com/capitalone/synthetic-data
