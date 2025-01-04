@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/synthetic-data-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/synthetic-data-{{ version }}.tar.gz
   sha256: eeef55fe2fb2f3d3a1e71861817ebad5cbb2b9df8cb915fc98fbddbbd70b92ae
 
 build:
@@ -14,14 +14,14 @@ build:
   script_env:
     - PYTHONUTF8=1
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.8
+    - python {{ python_min }}
     - pip
   run:
-    - python >=3.8
+    - python >={{ python_min }}
     - numpy >=1.22.0
     - scikit-learn >=1.1.0
     - scipy >=1.10.0
@@ -34,6 +34,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/capitalone/synthetic-data
